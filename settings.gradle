@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral() {
+            content {
+                includeModule("com.theartofdev.edmodo", "android-image-cropper")
+            }
+
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = 'https://jitpack.io' }
+        maven { url = 'https://maven.fabric.io/public' }
+        maven { url = "https://maven.google.com" }
+
+    }
+}
+rootProject.name = "My Training Orange"
+include ':app'

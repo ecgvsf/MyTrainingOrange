@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#00FFFFFF"
+    tools:context=".fragments.HomeFragment"
+    android:importantForAccessibility="no">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/speakable_home_scroll"
+        android:importantForContentCapture="no"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/bottom_tabs"
+        tools:targetApi="r"
+        android:id="@+id/layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/main_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF"
+                android:hapticFeedbackEnabled="true"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardElevation="0dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/dashboard_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:cardBackgroundColor="#00FFFFFF"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:elevation="0dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/set_profile_image"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/social_icon"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/chart"
+                            android:layout_width="300dp"
+                            android:layout_height="300dp"
+                            android:layout_marginTop="30dp"
+                            app:layout_constraintBottom_toBottomOf="@id/set_profile_image"
+                            app:layout_constraintEnd_toEndOf="@id/set_profile_image"
+                            app:layout_constraintStart_toStartOf="@id/set_profile_image"
+                            app:layout_constraintTop_toTopOf="@id/set_profile_image" />
+
+                        <!--
+                        <ImageView
+                            android:id="@+id/profile_pic"
+                            android:layout_width="290dp"
+                            android:layout_height="290dp"
+                            android:contentDescription="@string/app_name"
+                            android:importantForContentCapture="no"
+                            android:padding="15dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/name"
+                            app:layout_constraintBottom_toTopOf="@id/description"
+                            app:srcCompat="@drawable/ic_launcher_foreground">
+
+
+                        </ImageView>
+                        -->
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="0dp"
+                            android:text="@string/name_surname_txt"
+                            android:textSize="24sp"
+                            app:flow_verticalAlign="center"
+                            app:layout_constraintBottom_toTopOf="@id/chart"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <!--
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profile_image"
+                            app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            android:foreground="@drawable/icon_background"
+                            app:civ_border_color="#FF000000"
+                            app:civ_border_width="2dp"
+                            app:layout_constraintBottom_toTopOf="@+id/description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/name"
+                            app:layout_constraintTop_toTopOf="@+id/chart" />
+                        -->
+
+
+                        <!--
+                        <com.canhub.cropper.CropImageView
+                            android:id="@+id/cropImageView"
+                            android:layout_width="290dp"
+                            android:layout_height="290dp"
+                            app:layout_constraintBottom_toTopOf="@id/description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/name"/>
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/shapeableImageView"
+                            android:layout_width="290dp"
+                            android:layout_height="290dp"
+                            app:layout_constraintBottom_toTopOf="@id/description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/name"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+
+                        <ImageButton
+                            android:id="@+id/button_profile_pic"
+                            android:layout_width="290dp"
+                            android:layout_height="290dp"
+                            android:background="#00000000"
+                            android:backgroundTint="#000000"
+                            android:contentDescription="@string/app_name"
+                            android:importantForContentCapture="no"
+                            android:padding="15dp"
+                            app:layout_constraintBottom_toTopOf="@id/description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/name" />
+                            -->
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/description"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginVertical="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/chart">
+
+                            <TextView
+                                android:id="@+id/carbo_chart"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/carboidrati_txt"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@id/lipids_chart"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/lipids_chart"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lipidi_txt"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="@id/proteins_chart"
+                                app:layout_constraintStart_toStartOf="@id/carbo_chart"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/proteins_chart"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/proteine_txt"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@id/lipids_chart"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
+
+            <!--
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/main_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:importantForContentCapture="no"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_launcher_background" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:importantForContentCapture="no"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    tools:targetApi="r" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/hint_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#00FFFFFF"
+                app:cardElevation="0dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/hint_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="7dp"
+                        android:paddingVertical="7dp">
+
+                        <!-- Media -->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="7dp"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/descriptor_hint"
+                            android:maxWidth="40dp"
+                            android:maxHeight="40dp"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/lamp_icon" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            android:maxLines="3"
+                            android:text="Data la tua dieta squilibrata, si consiglia l'assunzione di cibi grassi e ricchi di vitamina C" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Piatti per te:"
+                    android:textSize="24sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="10dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="3dp">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="5dp"
+                            app:srcCompat="@drawable/ic_launcher_background" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="5dp"
+                            app:srcCompat="@drawable/ic_launcher_background" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="5dp"
+                            app:srcCompat="@drawable/ic_launcher_background" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="5dp"
+                            app:srcCompat="@drawable/ic_launcher_background" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="5dp"
+                            app:srcCompat="@drawable/ic_launcher_background" />
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

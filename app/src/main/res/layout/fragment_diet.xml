@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#00FFFFFF"
+    tools:context=".fragments.DietFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:scrollbars="none"
+        android:id="@+id/layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="7dp"
+            android:elevation="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/alata"
+                android:padding="15dp"
+                android:text="YOUR DATA"
+                android:textSize="28sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="6dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="KCAL" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8.5dp"
+                    android:gravity="right"
+                    android:text="45000/50000" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/kcal_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progress="15" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="LITRES" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8.5dp"
+                    android:gravity="right"
+                    android:text="45000/50000" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/water_progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progress="75" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="CARBO" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8.5dp"
+                    android:gravity="right"
+                    android:text="45000/50000" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/carbo_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progress="45" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="LIPIDS" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8.5dp"
+                    android:gravity="right"
+                    android:text="45000/50000" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/lipids_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progress="55" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:text="PROTEINS" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8.5dp"
+                    android:gravity="right"
+                    android:text="45000/50000" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/proteins_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:progress="25" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/water_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="#00FFFFFF"
+                android:backgroundTint="#00FFFFFF"
+                android:elevation="0dp"
+                android:visibility="visible"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#00FFFFFF"
+                    android:elevation="0dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/plate_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:elevation="0dp">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:id="@+id/water_layout">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/plate_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:maxWidth="90dp"
+                                        android:maxHeight="90dp"
+                                        android:padding="8dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/water_icon"
+                                        app:layout_constraintStart_toStartOf="parent" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:paddingVertical="3.5dp"
+                                        android:text="ADD WATER"
+                                        android:textSize="21sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@id/water_add_button"
+                                        app:layout_constraintStart_toEndOf="@id/plate_icon"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <ImageButton
+                                        android:id="@+id/water_add_button"
+                                        android:layout_width="90dp"
+                                        android:layout_height="90dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:maxWidth="90dp"
+                                        android:maxHeight="90dp"
+                                        android:scaleType="fitCenter"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <GridLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/water_list"
+                                    android:orientation="horizontal"
+                                    android:layout_marginVertical="15dp"
+                                    android:columnCount="7"
+                                    android:visibility="gone"
+                                    android:useDefaultMargins="true">
+
+                                    <ImageView
+                                        android:id="@+id/glass1"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"
+                                        android:padding="0dp"/>
+                                    <ImageView
+                                        android:id="@+id/glass2"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"/>
+                                    <ImageView
+                                        android:id="@+id/glass3"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"/>
+                                    <ImageView
+                                        android:id="@+id/glass4"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"/>
+                                    <ImageView
+                                        android:id="@+id/glass5"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"/>
+                                    <ImageView
+                                        android:id="@+id/glass6"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"/>
+                                    <ImageView
+                                        android:id="@+id/glass7"
+                                        android:layout_width="35dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/filling"
+                                        android:layout_margin="7dp"/>
+                                </GridLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/water_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:elevation="0dp">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@android:dimen/app_icon_size"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/drink_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="90dp"
+                                android:maxHeight="90dp"
+                                android:padding="8dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/piatto_icon"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingVertical="3.5dp"
+                                android:text="ADD MEAL"
+                                android:textSize="21sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/meal_add_button"
+                                app:layout_constraintStart_toEndOf="@id/drink_icon"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/meal_add_button"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:adjustViewBounds="true"
+                                android:background="#00FFFFFF"
+                                android:maxWidth="90dp"
+                                android:maxHeight="90dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_add_circle_outline"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
+
+    <!--
+
+
+    <LinearLayout
+    android:id="@+id/linera_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginBottom="20dp">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fridge_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:scaleType="fitCenter"
+            android:layout_weight="1">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:id="@+id/fridge_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="170dp"
+                    android:padding="8dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/fridge_icon"
+                    app:layout_constraintBottom_toTopOf="@id/fridge_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fridge_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="3.5dp"
+                    android:text="YOUR FRIDGE"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/fridge_icon"
+                    app:layout_constraintStart_toStartOf="@+id/fridge_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/fridge_icon" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/diet_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:layout_weight="1">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:backgroundTint="#00FFFFFF"
+                    android:id="@+id/diet_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="170dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/diet_icon"
+                    app:layout_constraintBottom_toTopOf="@id/diet_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/diet_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="3.5dp"
+                    android:text="YOUR DIET"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/diet_icon"
+                    app:layout_constraintStart_toStartOf="@+id/diet_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/diet_icon" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/recipes_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:layout_weight="1">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:backgroundTint="#00FFFFFF"
+                    android:id="@+id/recipes_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="170dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/recipes_icon"
+                    app:layout_constraintBottom_toTopOf="@id/recipes_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipes_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="3.5dp"
+                    android:text="YOUR RECIPES"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/recipes_icon"
+                    app:layout_constraintStart_toStartOf="@+id/recipes_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/recipes_icon" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pref_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:layout_weight="1">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:backgroundTint="#00FFFFFF"
+                    android:id="@+id/pref_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="170dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/pref_icon"
+                    app:layout_constraintBottom_toTopOf="@+id/pref_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pref_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="3.5dp"
+                    android:text="FAVORITES"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/pref_icon"
+                    app:layout_constraintStart_toStartOf="@+id/pref_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/pref_icon" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    </LinearLayout>
+
+    -->
