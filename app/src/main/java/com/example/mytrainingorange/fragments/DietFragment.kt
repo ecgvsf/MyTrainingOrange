@@ -18,9 +18,15 @@ import com.example.mytrainingorange.R
 import com.example.mytrainingorange.buttonactivity.RecipesActivity
 import com.example.mytrainingorange.databinding.FragmentDietBinding
 import com.example.mytrainingorange.listener.CustomAnimationDrawableNew
+import com.example.mytrainingorange.model.Diet
+import com.example.mytrainingorange.model.User
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import kotlin.math.roundToInt
 
 
 class DietFragment : Fragment() {
@@ -30,6 +36,7 @@ class DietFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var database : DatabaseReference
+    private lateinit var user: FirebaseAuth
 
     private lateinit var glasses : ArrayList<ImageView>
 
@@ -41,19 +48,15 @@ class DietFragment : Fragment() {
         _binding = FragmentDietBinding.inflate(inflater, container, false)
 
         database = Firebase.database.reference
-        /*
-        val bars = arrayOf(binding.kcalProgressBar,
-            binding.waterProgressBar,
-            binding.carboProgressBar,
-            binding.proteinsProgressBar,
-            binding.lipidsProgressBar)
+        user = Firebase.auth
 
-        database.child("users").child(userId.toString()).get().addOnSuccessListener {
-            val userData = it.getValue<User>()
-            if (userData != null) {
 
-            }
-        }*/
+        refreshData()
+
+        binding.refreshLayout.setOnRefreshListener{
+            refreshData()
+            binding.refreshLayout.isRefreshing = false
+        }
 
         //bars[0].progress =
 
@@ -88,6 +91,38 @@ class DietFragment : Fragment() {
          */
 
         return binding.root
+    }
+
+    private fun refreshData() {
+        database.child("users").child(user.uid!!).get().addOnSuccessListener {
+            val userData = it.getValue<User>()
+            if (userData != null) {
+                var calToHit = calculateKcal(userData.weight!!, userData.sex!!)
+                var currentData = userData.cal!!
+                binding.kcalProgressIndicator.text = "${currentData.roundToInt()}/${calToHit.roundToInt()} Kcal"
+                binding.kcalProgressBar.progress = (currentData / calToHit * 100).toInt()
+
+                currentData = userData.water!!
+                var dataToHit = 2.5f
+                binding.waterProgressIndicator.text = "${(currentData * 100.0).roundToInt() / 100.0}/${(dataToHit * 100.0).roundToInt() / 100.0} L"
+                binding.waterProgressBar.progress = (currentData / dataToHit * 100).toInt()
+
+                currentData = userData.carbo!!
+                dataToHit = (((userData.diet as Diet).maxCarbo!! + (userData.diet).minCarbo!!) / 2) / 100 * calToHit / 4
+                binding.carboProgressIndicator.text = "${currentData.roundToInt()}/${dataToHit.roundToInt()} g"
+                binding.carboProgressBar.progress = (currentData / dataToHit * 100).toInt()
+
+                currentData = userData.fats!!
+                dataToHit = (((userData.diet).maxFats!! + (userData.diet).minFats!!) / 2) / 100 * calToHit / 9
+                binding.fatsProgressIndicator.text = "${currentData.roundToInt()}/${dataToHit.roundToInt()} g"
+                binding.lipidsProgressBar.progress = (currentData / dataToHit * 100).toInt()
+
+                currentData = userData.proteins!!
+                dataToHit = (((userData.diet).maxProteins!! + (userData.diet).minProteins!!) / 2) / 100 * calToHit / 4
+                binding.proteinsProgressIndicator.text = "${currentData.roundToInt()}/${dataToHit.roundToInt()} g"
+                binding.proteinsProgressBar.progress = (currentData / dataToHit * 100).toInt()
+            }
+        }
     }
 
     inner class WaterAnimation(private var pos: Int): View.OnClickListener{
@@ -167,6 +202,13 @@ class DietFragment : Fragment() {
         activity?.startActivity(intent)
     }
 
+    private fun calculateKcal(weight : Int, sex : Int): Float {
+        if(sex == 0){
+            return weight * 24f
+        } else {
+            return weight * 0.9f * 24
+        }
+    }
 
 
 }

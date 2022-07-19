@@ -69,7 +69,11 @@ class RecipesFragment : Fragment() {
         recipes.add(Recipe(R.drawable.ricetta_uova, "ricetta_uova", "Description"))
 
         recyclerView = view.findViewById(R.id.recycler)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(
+            requireContext(),
+            LinearLayoutManager.VERTICAL,
+            false
+        )
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = RecycleAdapter(requireContext(), recipes)
         recyclerView.scrollToPosition((Int.MAX_VALUE/2)-(Int.MAX_VALUE/2)%recipes.size)

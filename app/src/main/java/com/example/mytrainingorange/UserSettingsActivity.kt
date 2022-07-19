@@ -9,6 +9,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,7 @@ class UserSettingsActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var user: User
 
+
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var flag: Activity
@@ -54,7 +56,6 @@ class UserSettingsActivity : AppCompatActivity() {
         binding = ActivityUserSettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         databese.child("users").child(auth.currentUser!!.uid).get().addOnSuccessListener {
             user = it.getValue<User>()!!
         }
@@ -69,7 +70,9 @@ class UserSettingsActivity : AppCompatActivity() {
         }
 
         binding.peso.setOnClickListener{
-            startActivity(Intent(this, WeightActivity::class.java),
+            intent = Intent(this, WeightActivity::class.java)
+            intent.putExtra("weight", user.weight)
+            startActivity(intent,
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
@@ -132,10 +135,13 @@ class UserSettingsActivity : AppCompatActivity() {
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_height)
 
+        val h = 175//user.height
+        Log.w("altezza", "$h")
+
         val ruler = dialog.findViewById<RulerValuePicker>(R.id.ruler_picker)
         var height = dialog.findViewById<TextView>(R.id.height)
         ruler.setIndicatorHeight(0.35f,0.15f)
-        ruler.selectValue(user.height as Int)
+        ruler.selectValue(h)
         ruler.setValuePickerListener(object : RulerValuePickerListener {
             override fun onValueChange(value: Int) {
                 //Value changed and the user stopped scrolling the ruler.
@@ -172,7 +178,7 @@ class UserSettingsActivity : AppCompatActivity() {
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_sex)
 
-        dialog.findViewById<RadioGroup>(R.id.buttons).check(user.sex as Int)
+        dialog.findViewById<RadioGroup>(R.id.buttons).check(0)//user.sex as Int)
 
         dialog.findViewById<TextView>(R.id.done).setOnClickListener {
             if (dialog.findViewById<RadioButton>(R.id.male_button).isChecked) {
@@ -205,9 +211,9 @@ class UserSettingsActivity : AppCompatActivity() {
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_age)
 
-        var year: Int = user.bDay?.year as Int
-        var month: Int = user.bDay?.month as Int
-        var date: Int = user.bDay?.date as Int
+        val year: Int = 8//user.bDay?.year as Int
+        val month: Int = 8//user.bDay?.month as Int
+        val date: Int = 7//user.bDay?.date as Int
         val picker = dialog.findViewById<DatePicker>(R.id.date_picker)
 
         picker.updateDate(year, month, date)

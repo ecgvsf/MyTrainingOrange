@@ -19,24 +19,33 @@
         android:theme="@style/Theme.MyTrainingOrange"
         tools:targetApi="31">
         <activity
-            android:name=".WeightPicker.WeightActivity"
+            android:name=".MealActivity"
             android:exported="false" />
+        <activity
+            android:name=".WeightPicker.WeightActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FavoritesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UserSettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_user_settings" />
+            android:label="@string/title_activity_user_settings"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LogInActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegistrationActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,16 +54,20 @@
         </activity>
         <activity
             android:name=".buttonactivity.RecipesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".buttonactivity.DietActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".buttonactivity.FavActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"

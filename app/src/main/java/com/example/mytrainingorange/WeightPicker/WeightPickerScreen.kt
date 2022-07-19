@@ -1,5 +1,6 @@
 package com.example.mytrainingorange.WeightPicker
 
+import android.util.Log
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,28 +16,35 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
-import com.example.mytrainingorange.UserSettingsActivity
 import com.example.mytrainingorange.WeightPicker.components.WeightScale
 import com.example.mytrainingorange.WeightPicker.models.ScaleStyle
-import com.example.mytrainingorange.model.User
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.sync.Semaphore
+
 
 @ExperimentalAnimationApi
 @Composable
-fun WeightPickerScreen() {
-    val databese : DatabaseReference = Firebase.database.reference
+fun WeightPickerScreen(userw: Int) {
+    mostra(w = userw)
+}
+
+@Composable
+fun mostra(w: Int){
+    val databese: DatabaseReference = Firebase.database.reference
     val auth: FirebaseAuth = Firebase.auth
-    var userw: Int = 0
-    databese.child("users").child(auth.currentUser!!.uid).child("weight").get().addOnSuccessListener {
-        userw = it.value as Int
-    }
+
+    Log.w("Peso", "$w")
 
     var weight by remember {
-        mutableStateOf(80)
+        mutableStateOf(w)
     }
     val haptic = LocalHapticFeedback.current
     Box(modifier = Modifier.fillMaxSize()) {
@@ -49,7 +57,7 @@ fun WeightPickerScreen() {
                 scaleWidth = 240.dp
 
             ),
-            initialWeight = userw,
+            initialWeight = w,
             onWeightChange = {
                 weight = it
                 when {

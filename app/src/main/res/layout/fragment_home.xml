@@ -172,37 +172,74 @@
                             app:layout_constraintTop_toBottomOf="@+id/chart">
 
                             <TextView
-                                android:id="@+id/carbo_chart"
+                                android:id="@+id/fats_chart"
                                 android:layout_width="80dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/carboidrati_txt"
+                                android:text="FATS"
                                 android:textAlignment="center"
                                 android:textSize="12sp"
-                                app:layout_constraintEnd_toEndOf="@id/lipids_chart"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/lipids_chart"
+                                android:id="@+id/carbo_chart"
                                 android:layout_width="80dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/lipidi_txt"
+                                android:text="CARBOS"
                                 android:textAlignment="center"
                                 android:textSize="12sp"
-                                app:layout_constraintEnd_toEndOf="@id/proteins_chart"
-                                app:layout_constraintStart_toStartOf="@id/carbo_chart"
+                                android:paddingRight="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/fats_chart"
+                                app:layout_constraintRight_toLeftOf="@id/carbo_chart"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/proteins_chart"
                                 android:layout_width="80dp"
                                 android:layout_height="wrap_content"
-                                android:text="@string/proteine_txt"
+                                android:text="PROTEINS"
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toRightOf="@id/carbo_chart"
+                                app:layout_constraintStart_toEndOf="@+id/fats_chart"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/fats_txt"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
                                 android:textAlignment="center"
                                 android:textSize="12sp"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="@id/lipids_chart"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/fats_chart" />
+
+                            <TextView
+                                android:id="@+id/carbo_txt"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                android:paddingRight="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/fats_chart"
+                                app:layout_constraintRight_toLeftOf="@id/carbo_chart"
+                                app:layout_constraintTop_toBottomOf="@id/carbo_chart" />
+
+                            <TextView
+                                android:id="@+id/proteins_txt"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textSize="12sp"
+                                app:layout_constraintLeft_toRightOf="@id/carbo_chart"
+                                app:layout_constraintStart_toEndOf="@+id/fats_chart"
+                                app:layout_constraintTop_toBottomOf="@id/proteins_chart" />
+
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -305,59 +342,13 @@
                     android:text="Piatti per te:"
                     android:textSize="24sp" />
 
-                <HorizontalScrollView
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingVertical="10dp"
-                    android:scrollbars="none">
+                    android:layout_height="200dp"
+                    android:orientation="horizontal" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="3dp">
-
-                        <ImageView
-                            android:id="@+id/imageView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingHorizontal="5dp"
-                            app:srcCompat="@drawable/ic_launcher_background" />
-
-                        <ImageView
-                            android:id="@+id/imageView7"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingHorizontal="5dp"
-                            app:srcCompat="@drawable/ic_launcher_background" />
-
-                        <ImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingHorizontal="5dp"
-                            app:srcCompat="@drawable/ic_launcher_background" />
-
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingHorizontal="5dp"
-                            app:srcCompat="@drawable/ic_launcher_background" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingHorizontal="5dp"
-                            app:srcCompat="@drawable/ic_launcher_background" />
-                    </LinearLayout>
-
-
-                </HorizontalScrollView>
             </LinearLayout>
 
         </LinearLayout>

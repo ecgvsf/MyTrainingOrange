@@ -14,7 +14,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mytrainingorange.*
 import com.example.mytrainingorange.buttonactivity.DietActivity
 import com.example.mytrainingorange.databinding.FragmentUserBinding
+import com.example.mytrainingorange.model.User
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -26,6 +31,10 @@ class UserFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var databese : DatabaseReference
+    private lateinit var auth: FirebaseAuth
+    private lateinit var user: User
+
     private val GalleryPick = 1
 
     override fun onCreateView(
@@ -36,6 +45,16 @@ class UserFragment : Fragment() {
         // Inflate the layout for this fragment
 
         _binding = FragmentUserBinding.inflate(inflater, container, false)
+
+        databese = Firebase.database.reference
+        auth = Firebase.auth
+
+        refreshData()
+
+        binding.refreshLayout.setOnRefreshListener{
+            refreshData()
+            binding.refreshLayout.isRefreshing = false
+        }
 
         binding.photoButton.setOnClickListener{
             val galleryIntent = Intent()
@@ -51,6 +70,15 @@ class UserFragment : Fragment() {
         }
         binding.dettagli.setOnClickListener {
             val intent = Intent (context, UserSettingsActivity::class.java)
+            //intent.putExtra("h", user.height)
+            //intent.putExtra("w", user.weight)
+            //intent.putExtra("s", user.sex)
+            //intent.putExtra("y", user.bDay?.year)
+            //intent.putExtra("m", user.bDay?.month)
+            //intent.putExtra("d", user.bDay?.date)
+            //intent.putExtra("n", user.name)
+            //intent.putExtra("s", user.surname)
+            //intent.putExtra("u", user.userName)
             startActivityForResult(intent, 0)
         }
         binding.preferenza.setOnClickListener {
@@ -67,6 +95,16 @@ class UserFragment : Fragment() {
             MainActivity.flag.finish()
         }
         return binding.root
+    }
+
+    private fun refreshData() {
+        databese.child("users").child(auth.currentUser!!.uid).get().addOnSuccessListener {
+            user = it.getValue<User>()!!
+            binding.name.text = user.name
+            binding.dieta.text = "Diet " + user.diet?.title
+            binding.valPeso.text = user.weight.toString() + " kg"
+            binding.valDieta.text = user.diet?.desc
+        }
     }
 
     private fun bitmapToString(bitmap: Bitmap): String? {

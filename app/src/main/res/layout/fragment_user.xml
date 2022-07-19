@@ -6,261 +6,280 @@
     android:layout_height="match_parent"
     tools:context=".fragments.UserFragment">
 
-    <ScrollView
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/profile_card"
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/bar"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="25dp"
-                app:cardCornerRadius="15dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <RelativeLayout
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profile_card"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="25dp"
+                    app:cardCornerRadius="15dp">
 
-                    <TextView
-                        android:id="@+id/name"
-                        style="@style/TextAppearance.AppCompat.Large"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_toRightOf="@+id/set_profile_image"
-                        android:text="Franco\n24 anni"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/name"
-                        android:layout_marginVertical="10dp"
-                        android:layout_toRightOf="@+id/set_profile_image"
-                        android:text="Dieta Equilibrata"
-                        android:textSize="16sp" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/set_profile_image"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="25dp"
-                        android:src="@drawable/social_icon"
-                        app:civ_border_color="#4FFF9800"
-                        app:civ_border_width="3dp" />
-
-                    <ImageButton
-                        android:id="@+id/photo_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignRight="@id/set_profile_image"
-                        android:layout_alignBottom="@id/set_profile_image"
-                        android:background="#00000000"
-                        android:padding="5dp"
-                        android:src="@drawable/ic_photo"
-                        app:tint="@color/primary" />
-
-                    <View
-                        android:id="@+id/divider"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/set_profile_image"
-                        android:layout_marginHorizontal="15dp"
-                        android:background="?android:attr/listDivider" />
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/peso"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/divider"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:text="Peso Attuale" />
+                        <TextView
+                            android:id="@+id/name"
+                            style="@style/TextAppearance.AppCompat.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_toEndOf="@+id/set_profile_image"
+                            android:text="Franco"
+                            android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/val_peso"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/divider"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:text="80 kg" />
+                        <TextView
+                            android:id="@+id/age"
+                            style="@style/TextAppearance.AppCompat.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:layout_toEndOf="@+id/set_profile_image"
+                             android:layout_below="@id/name"
+                            android:text="18 anni"
+                            android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/dieta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/peso"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:text="Dieta" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/age"
+                            android:layout_marginVertical="10dp"
+                            android:layout_toEndOf="@+id/set_profile_image"
+                            android:text="Dieta Equilibrata"
+                            android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/val_dieta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/val_peso"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:text="Dimagrisci" />
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/set_profile_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="25dp"
+                            android:src="@drawable/social_icon"
+                            app:civ_border_color="#4FFF9800"
+                            app:civ_border_width="3dp" />
+
+                        <ImageButton
+                            android:id="@+id/photo_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignEnd="@id/set_profile_image"
+                            android:layout_alignBottom="@id/set_profile_image"
+                            android:background="#00000000"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_photo"
+                            app:tint="@color/primary" />
+
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/set_profile_image"
+                            android:layout_marginHorizontal="15dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <TextView
+                            android:id="@+id/peso"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Peso Attuale" />
+
+                        <TextView
+                            android:id="@+id/val_peso"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="80 kg" />
+
+                        <TextView
+                            android:id="@+id/dieta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/peso"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Dieta" />
+
+                        <TextView
+                            android:id="@+id/val_dieta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/val_peso"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Dimagrisci" />
 
 
-                </RelativeLayout>
+                    </RelativeLayout>
 
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/pers_txt"
-                style="@style/TextAppearance.AppCompat.Caption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/profile_card"
-                android:layout_marginTop="15dp"
-                android:layout_marginHorizontal="15dp"
-                android:text="PERSONALIZZAZIONE"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/pers_txt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:text="PERSONALIZZAZIONE"
+                    android:textSize="12sp" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/pers_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/pers_txt"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="15dp">
-
-                <RelativeLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pers_card"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:cardCornerRadius="15dp">
 
-                    <TextView
-                        android:id="@+id/dettagli"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_user"
-                        android:drawableEnd="@drawable/ic_forward"
-                        android:drawablePadding="5dp"
-                        android:padding="15dp"
-                        android:text="Dettagli personali" />
+                        android:layout_height="match_parent">
 
-                    <View
-                        android:id="@+id/divider2"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/dettagli"
-                        android:layout_marginHorizontal="15dp"
-                        android:background="?android:attr/listDivider" />
+                        <TextView
+                            android:id="@+id/dettagli"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_user"
+                            android:drawableEnd="@drawable/ic_forward"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="Dettagli personali" />
 
-                    <TextView
-                        android:id="@+id/preferenza"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/divider2"
-                        android:drawableStart="@drawable/ic_diet"
-                        android:drawableEnd="@drawable/ic_forward"
-                        android:drawablePadding="5dp"
-                        android:padding="15dp"
-                        android:text="Esigienze e preferenza dieta" />
+                        <View
+                            android:id="@+id/divider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/dettagli"
+                            android:layout_marginHorizontal="15dp"
+                            android:background="?android:attr/listDivider" />
 
-                    <View
-                        android:id="@+id/divider3"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/preferenza"
-                        android:layout_marginHorizontal="15dp"
-                        android:background="?android:attr/listDivider" />
+                        <TextView
+                            android:id="@+id/preferenza"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider2"
+                            android:drawableStart="@drawable/ic_diet"
+                            android:drawableEnd="@drawable/ic_forward"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="Esigienze e preferenza dieta" />
 
-                    <TextView
-                        android:id="@+id/abitudini"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/divider3"
-                        android:drawableStart="@drawable/ic_calendar"
-                        android:drawableEnd="@drawable/ic_forward"
-                        android:drawablePadding="5dp"
-                        android:padding="15dp"
-                        android:text="Imposta le tue abitudini" />
+                        <View
+                            android:id="@+id/divider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/preferenza"
+                            android:layout_marginHorizontal="15dp"
+                            android:background="?android:attr/listDivider" />
 
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/abitudini"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider3"
+                            android:drawableStart="@drawable/ic_calendar"
+                            android:drawableEnd="@drawable/ic_forward"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="Imposta le tue abitudini" />
 
-
-            </androidx.cardview.widget.CardView>
-
-            <View
-                android:id="@+id/divider4"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/pers_card"
-                android:layout_marginHorizontal="15dp"
-                android:background="?android:attr/listDivider" />
+                    </RelativeLayout>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/divider4"
-                android:layout_margin="15dp"
-                app:cardCornerRadius="15dp">
+                </androidx.cardview.widget.CardView>
 
-                <RelativeLayout
+                <View
+                    android:id="@+id/divider4"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="?android:attr/listDivider" />
 
-                    <TextView
-                        android:id="@+id/log_out"
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_exit"
-                        android:drawableEnd="@drawable/ic_forward"
-                        android:drawablePadding="5dp"
-                        android:padding="15dp"
-                        android:text="Log out" />
+                        android:layout_height="match_parent">
 
-                    <View
-                        android:id="@+id/divider5"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_below="@+id/log_out"
-                        android:layout_marginHorizontal="15dp"
-                        android:background="?android:attr/listDivider" />
+                        <TextView
+                            android:id="@+id/log_out"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_exit"
+                            android:drawableEnd="@drawable/ic_forward"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="Log out" />
 
-                    <TextView
-                        android:id="@+id/delete"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/divider5"
-                        android:drawableStart="@drawable/ic_delete"
-                        android:drawableEnd="@drawable/ic_forward"
-                        android:drawablePadding="5dp"
-                        android:padding="15dp"
-                        android:text="Elimina l'account" />
+                        <View
+                            android:id="@+id/divider5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/log_out"
+                            android:layout_marginHorizontal="15dp"
+                            android:background="?android:attr/listDivider" />
 
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/divider5"
+                            android:drawableStart="@drawable/ic_delete"
+                            android:drawableEnd="@drawable/ic_forward"
+                            android:drawablePadding="5dp"
+                            android:padding="15dp"
+                            android:text="Elimina l'account" />
 
-            </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
 
-        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
 
 
         <!--
@@ -301,7 +320,9 @@
                 android:textStyle="bold" />
             -->
 
-    </ScrollView>
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </RelativeLayout>
