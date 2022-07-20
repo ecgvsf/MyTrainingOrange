@@ -1,37 +1,3 @@
-package com.example.mytrainingorange.model;
+package com.example.mytrainingorange.model
 
-public class Recipe {
-    private int image;
-    private String title;
-    private String desc;
-
-    public Recipe(int image, String title, String desc) {
-        this.image = image;
-        this.title = title;
-        this.desc = desc;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-}
+class Recipe(var image: Int? = null, var title: String? = null, var desc: String? = null, var kcal: String? = null)

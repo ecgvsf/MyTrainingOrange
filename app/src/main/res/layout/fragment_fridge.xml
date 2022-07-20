@@ -155,20 +155,103 @@
     </ScrollView>
     -->
 
-    <com.example.bubblepickerlibrary.rendering.BubblePicker
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/picker"
-        app:backgroundColor="@color/trasparent"/>
+        android:layout_height="match_parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/ic_add"
-        android:contentDescription="add_button"/>
+        <com.example.bubblepickerlibrary.rendering.BubblePicker
+            android:id="@+id/picker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:backgroundColor="@color/trasparent" />
+
+        <ImageView
+            android:id="@+id/fridge"
+            android:layout_width="94dp"
+            android:layout_height="98dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="50dp"
+            android:forceHasOverlappingRendering="true"
+            android:padding="10dp"
+            android:src="@drawable/fridge_icon"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/fridge"
+            android:layout_alignBottom="@id/fridge"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="15dp"
+            android:contentDescription="fab"
+            app:fabSize="normal"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/ic_add" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="127dp"
+            android:clickable="true"
+            android:contentDescription="remove"
+            android:focusable="true"
+            android:visibility="invisible"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/ic_remove"
+            app:tint="@color/white"
+            app:backgroundTint="@color/primary_variant"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="201dp"
+            android:contentDescription="add"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/ic_add"
+            app:tint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="invisible"
+            app:backgroundTint="@color/primary_variant"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="277dp"
+            android:contentDescription="search"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/ic_search"
+            app:tint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="invisible"
+            app:backgroundTint="@color/primary_variant"/>
+
+
+    </RelativeLayout>
+
+
 </FrameLayout>

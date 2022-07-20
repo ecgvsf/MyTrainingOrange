@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import com.example.bubblepickerlibrary.BubblePickerListener
 import com.example.bubblepickerlibrary.adapter.BubblePickerAdapter
@@ -22,6 +24,10 @@ class FridgeFragment : Fragment() {
 
     private lateinit var picker: BubblePicker
 
+    private val fromBottomAnim: Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.from_bottom_anim) }
+    private val toBottomAnim: Animation by lazy { AnimationUtils.loadAnimation(requireContext(),R.anim.to_bottom_anim) }
+
+    private var clicked = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +40,10 @@ class FridgeFragment : Fragment() {
         )
         _binding = FragmentFridgeBinding.inflate(inflater, container, false)
 
+
+        binding.fridge.setOnClickListener{
+            showFABMenu()
+        }
 
         val ingredients = arrayOf(
             "aduki", "agar", "alfalfa", "almond", "almond",
@@ -85,6 +95,50 @@ class FridgeFragment : Fragment() {
             }
         }
         return  binding.root
+    }
+
+    private fun showFABMenu() {
+        setVisibility(clicked)
+        setAnimation(clicked)
+        setClickable(clicked)
+        clicked = ! clicked
+    }
+
+    private fun setClickable(clicked: Boolean) {
+        if(!clicked){
+            binding.fabAdd.isClickable = true
+            binding.fabRemove.isClickable = true
+            binding.fabSearch.isClickable = true
+        } else {
+            binding.fabAdd.isClickable = false
+            binding.fabRemove.isClickable = false
+            binding.fabSearch.isClickable = false
+        }
+    }
+
+    private fun setAnimation(clicked: Boolean) {
+        if(!clicked){
+            binding.fabAdd.visibility = View.VISIBLE
+            binding.fabRemove.visibility = View.VISIBLE
+            binding.fabSearch.visibility = View.VISIBLE
+        } else {
+            binding.fabAdd.visibility = View.INVISIBLE
+            binding.fabRemove.visibility = View.INVISIBLE
+            binding.fabSearch.visibility = View.INVISIBLE
+        }
+
+    }
+
+    private fun setVisibility(clicked: Boolean) {
+        if(!clicked){
+            binding.fabAdd.startAnimation(fromBottomAnim)
+            binding.fabRemove.startAnimation(fromBottomAnim)
+            binding.fabSearch.startAnimation(fromBottomAnim)
+        } else {
+            binding.fabAdd.startAnimation(toBottomAnim)
+            binding.fabRemove.startAnimation(toBottomAnim)
+            binding.fabSearch.startAnimation(toBottomAnim)
+        }
     }
 
     override fun onResume() {

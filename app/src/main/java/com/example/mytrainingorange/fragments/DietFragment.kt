@@ -14,6 +14,7 @@ import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import bytesEqualTo
 import com.example.mytrainingorange.MainActivity
+import com.example.mytrainingorange.MealActivity
 import com.example.mytrainingorange.R
 import com.example.mytrainingorange.buttonactivity.RecipesActivity
 import com.example.mytrainingorange.databinding.FragmentDietBinding
@@ -164,7 +165,7 @@ class DietFragment : Fragment() {
     }
 
     private fun mealActivity() {
-        val intent = Intent (activity, MainActivity::class.java)
+        val intent = Intent (activity, MealActivity::class.java)
         activity?.startActivity(intent)
     }
 

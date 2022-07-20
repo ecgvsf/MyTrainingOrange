@@ -378,9 +378,10 @@
                                     android:maxWidth="90dp"
                                     android:maxHeight="90dp"
                                     android:scaleType="fitCenter"
-                                    android:src="@drawable/ic_add_circle_outline"
+                                    android:src="@drawable/ic_add"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/primary" />
 
 
                             </androidx.constraintlayout.widget.ConstraintLayout>

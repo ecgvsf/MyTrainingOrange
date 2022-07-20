@@ -81,23 +81,32 @@
         <entry key="..\:/Users/andre/AndroidStudioProjects/MyTrainingOrange/app/src/main/res/layout/weight_dialog.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/MyTrainingOrange/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.4" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/MyTrainingOrange/app/src/main/res/menu/drawer_menu.xml" value="0.6" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/circle_shadow.xml" value="0.127" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/emptying.xml" value="0.1" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/filling.xml" value="0.1" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/ic_add.xml" value="0.127" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/ic_calendar.xml" value="0.115" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/ic_cook.xml" value="0.115" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/ic_fridge.xml" value="0.115" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/ic_fridge2.xml" value="0.115" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/drawable/ic_heart.xml" value="0.1" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout-v28/fragment_fridge.xml" value="0.2734375" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/activity_diet.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/activity_meal.xml" value="0.264" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/activity_splash.xml" value="0.144" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/dialog_loading.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/dialog_name.xml" value="0.1265625" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_diet.xml" value="0.264" />
-        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_fridge.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_fridge.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_recipes.xml" value="0.1" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_tab_favourites.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_tab_personal.xml" value="0.1265625" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_tab_recipes.xml" value="0.1265625" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/fragment_user.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/layout/meal.xml" value="0.264" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.17037037037037037" />
         <entry key="..\:/Users/andre/Downloads/MyTrainingOrangeApp-master/MyTrainingOrangeApp-master/app/src/main/res/menu/main_activity2.xml" value="0.1265625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19114583333333332" />
