@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity">
+
+
+    <TextView
+        android:id="@+id/training"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/trasparent"
+        android:text="Training"
+        android:textColor="@color/primary"
+        android:textSize="70dp"
+        app:fontFamily="@font/blokletters"
+        tools:ignore="MissingConstraints"
+        android:layout_x="44dp"
+        android:layout_y="305dp" />
+
+    <TextView
+        android:id="@+id/g"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-7"
+        android:text="g"
+        android:textColor="@color/primary"
+        android:textSize="50sp"
+        app:fontFamily="@font/fanzine"
+        tools:ignore="MissingConstraints"
+        android:layout_x="263dp"
+        android:layout_y="414dp" />
+
+    <TextView
+        android:id="@+id/a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="5"
+        android:text="a"
+        android:textColor="@color/primary"
+        android:textSize="50sp"
+        app:fontFamily="@font/fanzine"
+        tools:ignore="MissingConstraints"
+        android:layout_x="198dp"
+        android:layout_y="414dp" />
+
+    <TextView
+        android:id="@+id/n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="15"
+        android:text="n"
+        android:textColor="@color/primary"
+        android:textSize="50sp"
+        app:fontFamily="@font/fanzine"
+        tools:ignore="MissingConstraints"
+        android:layout_x="228dp"
+        android:layout_y="414dp"  />
+
+    <TextView
+        android:id="@+id/e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-5"
+        android:text="e"
+        android:textColor="@color/primary"
+        android:textSize="50sp"
+        app:fontFamily="@font/fanzine"
+        tools:ignore="MissingConstraints"
+        android:layout_x="297dp"
+        android:layout_y="416dp" />
+
+    <ImageView
+        android:layout_width="113dp"
+        android:layout_height="115dp"
+        android:src="@drawable/arancia"
+        tools:ignore="MissingConstraints"
+        android:layout_x="60dp"
+        android:layout_y="401dp"  />
+
+    <TextView
+        android:id="@+id/r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="-10"
+        android:text="r"
+        android:textColor="@color/primary"
+        android:textSize="50sp"
+        app:fontFamily="@font/fanzine"
+        tools:ignore="MissingConstraints"
+        android:layout_x="173dp"
+        android:layout_y="404dp" />
+
+    <TextView
+        android:id="@+id/my"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My"
+        android:textColor="@color/primary"
+        android:textSize="45dp"
+        app:fontFamily="@font/cartoonisthand"
+        tools:ignore="MissingConstraints"
+        android:layout_x="84dp"
+        android:layout_y="282dp" />
+
+    <!--
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/video"/>
+        -->
+
+</AbsoluteLayout>
